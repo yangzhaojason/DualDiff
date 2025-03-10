@@ -1,12 +1,33 @@
 # DualDiff
 A dual-branch conditional diffusion model designed to enhance driving scene generation across multiple views and video sequences.
 
-## Demo Video
+<!-- ## Demo Video
 <video width="800" controls>
   <source src="https://github.com/yangzhaojason/DualDiff/raw/refs/heads/main/media/5721_1739810373.mp4" type="video/mp4">
   Your browser does not support the video tag.
-</video>
+</video> -->
 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Video</title>
+</head>
+<body>
+    <h2>Demo Video</h2>
+    <video width="700" controls autoplay loop muted>
+        <source src="https://your-video-url.com/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</body>
+</html> -->
+
+## Demo Video
+<video width="700" controls>
+  <source src="https://yangzhaojason.github.io/DualDiff/media/5721_1739810373.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ## Abstract
 Abstract—Accurate and high-fidelity driving scene reconstruction demands the effective utilization of comprehensive scene information as conditional inputs. Existing methods predominantly rely on 3D bounding boxes and BEV road maps for
