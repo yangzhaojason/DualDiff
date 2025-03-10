@@ -20,7 +20,7 @@ foreground and background control, which fail to capture the full complexity of 
 
 ## Method
 Architecture Overview of DualDiff for Video Generation. The model uses Occupancy Ray-shape Sampling (ORS) and Semantic Fusion Attention (SFA) for scene representation, which are fed into a dual-branch foreground-background architecture. The outputs are merged through residual connections in a U-Net. Video generation follows a Two-stage optimization: Spatio-Temporal Attention (ST-Attn) and Temporal Attention (Temporal Attn) are trained in the first stage, while Reward-Guided Diffusion (RGD) and Low-Rank Adaptation (LoRA) fine-tune the attention in the second stage. \
-<img src="https://github.com/yangzhaojason/DualDiff/blob/main/media/framework.jpg" width="500">
+<img src="https://github.com/yangzhaojason/DualDiff/blob/main/media/framework.jpg" width="800">
 
 ## Getting Started
 
@@ -37,7 +37,7 @@ Architecture Overview of DualDiff for Video Generation. The model uses Occupancy
 
 ## Quantitative Results
 More results can be found in the main paper. \
-<img src="https://github.com/yangzhaojason/DualDiff/blob/main/media/vis_result.jpg" width="500">
+<img src="https://github.com/yangzhaojason/DualDiff/blob/main/media/vis_result.jpg" width="800">
 
 ## Citation
 If you find our work useful, please cite our paper:
