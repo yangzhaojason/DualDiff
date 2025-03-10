@@ -24,8 +24,8 @@ A dual-branch conditional diffusion model designed to enhance driving scene gene
 </html> -->
 
 ## Demo Video
-<video width="700" controls>
-  <source src="https://yangzhaojason.github.io/DualDiff/media/5721_1739810373.mp4" type="video/mp4">
+<video width="800" controls>
+  <source src="https://cdn.jsdelivr.net/gh/yangzhaojason/DualDiff/media/5721_1739810373.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
