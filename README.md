@@ -25,9 +25,50 @@ Architecture Overview of DualDiff for Video Generation. The model uses Occupancy
 <img src="https://yangzhaojason.github.io/DualDiff/media/framework.jpg" width="800">
 
 ## Getting Started
-
 ### Environment Setup
+torch                       1.10.2+cu113
+torchvision                 0.11.3+cu113
+### Prepare Data
+1. Download the nuScenes dataset from the [website](https://www.nuscenes.org/nuscenes) and put them in `./data/`. You should have these files:
+    ```bash
+    data/nuscenes
+    ├── maps
+    ├── mini
+    ├── samples
+    ├── sweeps
+    ├── v1.0-mini
+    └── v1.0-trainval
+    ```
 
+> [!TIP]
+> You can download the `.pkl` files from [OneDrive](https://mycuhk-my.sharepoint.com/:u:/g/personal/1155157018_link_cuhk_edu_hk/EYF9ZkMHwVZKjrU5CUUPbfYBhC1iZMMnhE2uI2q5iCuv9w?e=QgEmcH). They should be enough for training and testing.
+
+2. Generate mmdet3d annotation files by:
+
+    ```bash
+    python tools/create_data.py nuscenes --root-path ./data/nuscenes \
+      --out-dir ./data/nuscenes_mmdet3d_2 --extra-tag nuscenes
+    ```
+    You should have these files:
+    ```bash
+    data/nuscenes_mmdet3d_2
+    ├── nuscenes_dbinfos_train.pkl (-> ${bevfusion-version}/nuscenes_dbinfos_train.pkl)
+    ├── nuscenes_gt_database (-> ${bevfusion-version}/nuscenes_gt_database)
+    ├── nuscenes_infos_train.pkl
+    └── nuscenes_infos_val.pkl
+    ```
+    Note: As shown above, some files can be soft-linked with the original version from bevfusion. If some of the files is located in `data/nuscenes`, you can move them to `data/nuscenes_mmdet3d_2` manually.
+3. Download map annotation pkl from one drive [nuscenes_map_anns_train.pkl](https://drive.google.com/file/d/1lrlHt4Amry4A_jxfzrm3U1exqpCDQ936/view?usp=sharing) and [nuscenes_map_anns_val.pkl](https://drive.google.com/file/d/15oQs8I9ejQMVERsqqk89w-_H_oixGjqp/view?usp=sharing). You should have these files:
+    ```bash
+    root
+    ├── data
+    ├── magicdrive
+    ├── third_party
+    ├── nuscenes_map_anns_val.pkl
+    └── nuscenes_map_anns_train.pkl
+    ├── ...
+    ```
+4. Download occ_proj from ...
 ### Pretrained Weights
 
 ### Train DualDiff
