@@ -26,8 +26,30 @@ Architecture Overview of DualDiff for Video Generation. The model uses Occupancy
 
 ## Getting Started
 ### Environment Setup
-torch                       1.10.2+cu113
-torchvision                 0.11.3+cu113
+Clone this repo with submodules
+
+```bash
+git clone --recursive https://github.com/yangzhaojason/DualDiff.git
+```
+
+The code is tested with `Pytorch==1.10.2` and `cuda 11.3` on A800 servers. To setup the python environment, follow:
+
+```bash
+conda create -n dualdiff python=3.8
+conda activate dualdiff
+pip install torch==1.10.2+cu113 torchvision==0.11.3+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
+cd ${ROOT}
+pip install -r requirements/dev.txt
+cd third_party/xformers
+pip install -e .
+cd ../diffusers
+pip install -e .
+cd ../bevfusion
+python setup.py develop
+cd ../../
+
+```
+
 ### Prepare Data
 1. Download the nuScenes dataset from the [website](https://www.nuscenes.org/nuscenes) and put them in `./data/`. You should have these files:
     ```bash
