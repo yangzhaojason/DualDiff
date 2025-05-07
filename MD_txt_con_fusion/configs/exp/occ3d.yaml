@@ -1,0 +1,35 @@
+# @package _global_
+defaults:
+  - /exp/224x400
+
+task_id: occ3d
+runner:
+  train_batch_size: 1
+  # learning_rate: 6e-5
+  # lr_warmup_steps: 5000
+  # checkpointing_steps: 2000
+  # validation_steps: 500
+  bbox_add_ratio: 0.0 # !!!
+  box_add_num: 0 # !!!
+  enable_xformers_memory_efficient_attention: true # debug
+
+# model:
+#   controlnet:
+#     # below two both vital to switch to custom conditioning embedder
+#     map_embedder_cls: magicdrive.networks.map_embedder.ControlNetConditioningEmbedding
+#     map_embedder_param:
+#       block_out_channels: [16, 32, 96, 256]
+
+official_ckpt: pretrained/SDv1.5mv-rawbox_2023-09-07_18-39_224x400
+model_save_path: pretrained/SDv1.5mv-rawbox_2023-09-07_18-39_224x400
+controlnet_seg_pretrained: sd-controlnet-seg #/diffusion_pytorch_model.bin
+resume_from_checkpoint: magicdrive-log/SDv1.5mv-rawbox_2024-08-09_06-58_occ3d/checkpoint-136000
+
+save_model_only: false
+
+
+
+# using multiplane stacked slices of occ input
+use_occ_3d: true
+use_occ_3d_fg: true
+use_occ_3d_bg: true

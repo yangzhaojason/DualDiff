@@ -1,0 +1,43 @@
+defaults:
+  - config
+  - _self_
+
+log_root_prefix: ./magicdrive-log-test
+
+runner:
+  max_train_steps: 100  # of no use, just to prevent NoneType error in downstream.py
+  validation_batch_size: 1
+  train_batch_size: 1
+  # num_workers: 2
+  # num_inference_steps: 50
+  validation_index: [204, 912, 1828, 2253, 4467, 5543]
+  # validation_index: [204, 206,207,208,512,519,520]
+  # validation_index: [] # if len==0, go with full val set
+  # validation_index: [5543]
+  enable_xformers_memory_efficient_attention: false  # 防止crossattnprocessor被覆盖
+  bbox_add_ratio: 0.0 # !!!
+  box_add_num: 0 # !!!
+
+model:
+  controlnet:
+    use_txt_con_fusion: true
+  pipe_module: magicdrive.pipeline.explore_pipeline_bev_controlnet.StableDiffusionBEVControlNetPipeline
+
+# image_size: [256, 704]  # size of devfusion in official code
+# image_size: [224, 480]  # size of cvt in official code
+# image_size: [272, 736]  # size of bevfusion in the paper
+image_size: [224, 400]  # size of cvt in the paper
+
+# validation_only: true
+# resume_from_checkpoint: magicdrive-log/SDv1.5mv-rawbox_2024-06-04_16-58_224x400/checkpoint-240000
+
+downstream_savepath: ./downstream-official-224-480
+GPU_num: 1
+log_root: ./
+
+save_model_only: true
+model_save_path: magicdrive-log/28000-ckpt
+official_ckpt: pretrained/SDv1.5mv-rawbox_2023-09-07_18-39_224x400
+
+occ_adapter: true
+task_id: saving_ckpt

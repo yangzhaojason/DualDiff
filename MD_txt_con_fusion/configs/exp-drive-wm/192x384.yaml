@@ -1,0 +1,22 @@
+# @package _global_
+defaults:
+  - /dataset/Nuscenes_map_cache_box
+  # - /runner/8gpus
+  - model: ../../model/SDv1.5mv_rawbox
+  - _self_  # make sure override
+
+task_id: 192x384
+
+dataset:
+  image_size: [192, 384] # drive-WM setting
+  back_resize: [800, 1600]  # (h, w)
+  back_pad: [0, 100, 0, 0]  # left, top, right and bottom
+  augment2d:
+    resize: [[0.24, 0.24]]  # 1600x800 * 0.24 = 384x192
+    rotate: null
+
+runner:
+  num_train_epochs: 350
+  validation_show_box: true
+  enable_xformers_memory_efficient_attention: true  # always need this.
+  bbox_add_ratio: 0.1

@@ -1,0 +1,28 @@
+# @package _global_
+defaults:
+  - /exp-hd/256x704
+
+task_id: occ_bg_hd
+runner:
+  train_batch_size: 1
+  # learning_rate: 6e-5
+  # lr_warmup_steps: 5000
+  # checkpointing_steps: 2000
+  # validation_steps: 500
+  bbox_add_ratio: 0.0 # !!!
+  box_add_num: 0 # !!!
+  enable_xformers_memory_efficient_attention: true # debug
+
+# model:
+#   controlnet:
+#     # below two both vital to switch to custom conditioning embedder
+#     map_embedder_cls: magicdrive.networks.map_embedder.ControlNetConditioningEmbedding
+#     map_embedder_param:
+#       block_out_channels: [16, 32, 96, 256]
+
+official_ckpt: pretrained/SDv1.5mv-rawbox_2023-09-07_18-39_224x400
+model_save_path: pretrained/SDv1.5mv-rawbox_2023-09-07_18-39_224x400
+controlnet_seg_pretrained: sd-controlnet-seg #/diffusion_pytorch_model.bin
+# resume_from_checkpoint: /opt/data/share/lihaoteng/aigc/MagicDrive_occ_token/magicdrive-log/SDv1.5mv-rawbox_2024-07-10_16-41_occ_fgfocus_nomaskloss/checkpoint-92000
+
+save_model_only: false

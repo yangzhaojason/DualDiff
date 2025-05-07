@@ -31,10 +31,10 @@ We introduce **DualDiff**, a **dual-branch conditional diffusion model** designe
 ## 🎬 Visual Examples
 **Generated scenes by DualDiff+:**
 
-![clip1](media/clip_1.gif)
-![clip2](media/clip_2.gif)
-![clip3](media/clip_3.gif)
-![clip4](media/clip_4.gif)
+<img src="media/clip_1.gif" width="1000" alt="generated_video">
+<img src="media/clip_2.gif" width="1000" alt="generated_video">
+<img src="media/clip_3.gif" width="1000" alt="generated_video">
+<img src="media/clip_4.gif" width="1000" alt="generated_video">
 
 ---
 

@@ -1,0 +1,89 @@
+{
+    "_class_name": "BEVControlNetModel",
+    "_diffusers_version": "0.17.1",
+    "act_fn": "silu",
+    "attention_head_dim": 8,
+    "bbox_embedder_cls": "magicdrive.networks.bbox_embedder.ContinuousBBoxWithTextEmbedding",
+    "bbox_embedder_param": {
+      "class_token_dim": 768,
+      "embedder_num_freq": 4,
+      "minmax_normalize": false,
+      "mode": "all-xyz",
+      "n_classes": 10,
+      "proj_dims": [
+        768,
+        512,
+        512,
+        768
+      ],
+      "trainable_class_token": false,
+      "use_text_encoder_init": true
+    },
+    "block_out_channels": [
+      320,
+      640,
+      1280,
+      1280
+    ],
+    "cam_embedder_param": {
+      "include_input": true,
+      "input_dims": 3,
+      "log_sampling": true,
+      "num_freqs": 4
+    },
+    "camera_in_dim": 189,
+    "camera_out_dim": 768,
+    "class_embed_type": null,
+    "conditioning_embedding_out_channels": [
+      16,
+      32,
+      96,
+      256
+    ],
+    "controlnet_conditioning_channel_order": "rgb",
+    "cross_attention_dim": 768,
+    "down_block_types": [
+      "CrossAttnDownBlock2D",
+      "CrossAttnDownBlock2D",
+      "CrossAttnDownBlock2D",
+      "DownBlock2D"
+    ],
+    "downsample_padding": 1,
+    "drop_cam_num": 6,
+    "drop_cam_with_box": false,
+    "drop_cond_ratio": 0.25,
+    "flip_sin_to_cos": true,
+    "freq_shift": 0,
+    "global_pool_conditions": false,
+    "in_channels": 4,
+    "layers_per_block": 2,
+    "map_embedder_cls": "magicdrive.networks.map_embedder.ControlNetConditioningEmbedding",
+    "map_embedder_param": {
+      "block_out_channels":[
+      16,
+      32,
+      96,
+      256
+      ]
+    },
+    "map_size": [
+      8,
+      200,
+      200
+    ],
+    "mid_block_scale_factor": 1,
+    "norm_eps": 1e-05,
+    "norm_num_groups": 32,
+    "num_class_embeds": null,
+    "only_cross_attention": false,
+    "projection_class_embeddings_input_dim": null,
+    "resnet_time_scale_shift": "default",
+    "uncond_cam_in_dim": [
+      3,
+      7
+    ],
+    "upcast_attention": false,
+    "use_linear_projection": false,
+    "use_uncond_map": null
+  }
+  
