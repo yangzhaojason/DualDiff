@@ -133,6 +133,19 @@ Visual and numerical evaluation of DualDiff on nuScenes:
 }
 ```
 
+```bibtex
+@inproceedings{li2025dualdiffdualbranchdiffusionmodel,
+      title={DualDiff: Dual-branch Diffusion Model for Autonomous Driving with Semantic Fusion}, 
+      author={Haoteng Li and Zhao Yang and Zezhong Qian and Gongpeng Zhao and Yuqi Huang and Jun Yu and Huazheng Zhou and Longjun Liu},
+      booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
+      year={2025},
+      pages={},
+      organization={IEEE},
+      address={},
+      url={https://arxiv.org/abs/2505.01857 }, 
+}
+```
+
 ---
 
 For full details, visit the [project page](https://yangzhaojason.github.io/DualDiff) or the [GitHub repository](https://github.com/yangzhaojason/DualDiff).
