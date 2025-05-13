@@ -5,8 +5,8 @@
 ---
 
 ## 🗞️ Project News
-- **[2025-01-28]** ✨ DualDiff accepted to **ICRA 2025**.
-- **[2025-03-07]** 🚀 DualDiff+ under review with extended video-level consistency modeling.
+- **[2025-01-28]** ✨ [DualDiff](https://www.arxiv.org/pdf/2505.01857) accepted to **ICRA 2025**.
+- **[2025-03-07]** 🚀 [DualDiff+](https://arxiv.org/abs/2503.03689) under review with extended video-level consistency modeling.
 - **[2025-05-07]** 📂 DualDiff image generation code officially **open-sourced**.
 
 ---
